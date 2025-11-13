@@ -799,6 +799,12 @@ app.post("/webhook", middleware(config), async (req, res) => {
   await Promise.all(
     events.map(async (event) => {
       try {
+        // 🧪 LINE Verify / 測試事件：不做任何處理，避免觸發 OpenAI 造成 timeout
+        if (event.replyToken === "00000000000000000000000000000000") {
+          console.log("[INFO] 收到 LINE Verify 測試事件，略過處理");
+          return;
+        }
+
         // 加好友：歡迎詞
         if (event.type === "follow") {
           const welcomeMessage = [
