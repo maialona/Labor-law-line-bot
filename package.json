@@ -1,9 +1,12 @@
 {
   "name": "labor-law-line-bot",
   "version": "0.1.0",
-  "description": "Labor Standards Law Helper LINE Bot (MVP-0)",
+  "description": "Labor Standards Law Helper LINE Bot",
   "main": "src/index.js",
   "type": "module",
+  "engines": {
+    "node": ">=18.17"
+  },
   "scripts": {
     "dev": "nodemon src/index.js",
     "start": "node src/index.js"
@@ -12,7 +15,7 @@
     "@line/bot-sdk": "^7.7.0",
     "dotenv": "^16.4.0",
     "express": "^4.21.0",
-    "openai": "^6.8.1"
+    "openai": "^4.0.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.0"
